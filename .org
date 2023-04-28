@@ -1,0 +1,300 @@
+* Tasks
+** TODO solve clojure tasks on codewars !!!
+** TODO learn org
+** TODO run chat-gpt in emacs
+** TODO автоматически вводить логин и пароль при пуше в репозиторий
+** TODO HOW TO RUN REPL IN CODE, HOW TO CHANGE NAMESPACE
+** TODO Chose geekbrains (or other) course. PostgreSQL??
+** TODO learn init file, package, settings, hotkeys
+*** user-config - user settings
+*** look-n-feel - visual settings. Need to read about packages, which are there
+*** editor -
+** TODO learn переменные окружения
+** TODO learn github
+** TODO how select code and run repl in emacs???
+** TODO learn packages
+** TODO treemacs
+** TODO learn emacs
+** TODO learn clojure
+** TODO how to pick out a string in emacs??
+** TODO 2 course clojure script
+** TODO chat gpt in emacs
+** TODO how to work with github?
+** TODO fast type
+** TODO test packages-gifts in code
+** TODO rechange navigation hotkeys
+** TODO залить проект на git с ветками, мерджами и пулреквестами в development,
+** каждый 5 урок заливать в master ветку
+** TODO reframe, shadow.cljs.github, feature-sliced.
+
+* REAGENT PRO course: clojure script
+** Lesson - 1
+** dependences: node, npm, jdk, emacs
+** commands
+*** npm install
+*** npm run dev - fetch all dependences
+*** npx create-cljs-project acme-app - create project
+*** npx shadow-cljs node-repl - run repl (in project dir)
+*** npx shadow-cljs watch frontend - create public/js/main.js
+*** also there have opportunity to create server and work with html
+** Lesson - 2
+** structure
+*** public: resources of project: html, css, js
+*** src: core - our clojure file with components
+*** state
+*** gitignore
+*** package.json - settings
+*** shadow.cljs - settings
+** Lesson - 3
+*** state
+*** (defn component [] [:div]) and (def component(fn[] [:div])) - identical
+*** atom for mutable data
+*** (defn gigs-atom (atom {})
+*** r/atom - atom like useState()
+*** (deref gigs-atom) -get atom values
+*** (!swap gigs-atom conj :player1) - new value in atom
+** Lesson - 4
+*** components have event listener
+*** view and control logic toghether in regaent??? for more reusable in app
+*** need create folder for components and create file like header.cljs
+*** need to import (require) those components in our app
+*** :refer [...] - like destruction
+*** [:img.logo {:src "img/gigin-logo.svg"} :alt "Giggin logo"]
+** Lesson - 5
+*** (map (fn [number] [:div number]) [1 2 3]) - но это неточно
+** Lesson - 7 adding event listener
+*** need to add atom in statement: (def orders (r/atom {})))
+*** :on-click
+*** swap! - change atom value
+*** Сохраняются все правила для реакта (например, при событии вызывается функция
+*** которая меняет состояние)
+*** M-x cider-connect-cljs localhost 3333 C-x b - repl,
+*** (shadow.cljs.devtools.api/nrepl-select :app)
+** Lesson - 8 - Listing orders
+*** (for [x [1 2 3]] (inc x)) => [2 3 4]
+*** get-in
+** Lesson 9
+*** commit - push - request - localmerge - clone master
+** Lesson 10
+*** (reduce + [1 2 3]) => 6, (map (fn [number] number) [1 2 3]) => (1 2 3)
+*** !reset - ???
+** Lesson 11
+*** empty? - true or false
+*** (if (empty? @state/orders) [this block] [or this block])
+** Lesson 12
+*** (def greet (fn [name] (str "Hi " name)))
+*** (defn greet2 [name lastName] (str "Hi " name))
+*** (def greet3 #(str "Hi " %1 %2))
+*** (let [x 1]) - let avaiable in only local function body
+*** (def) - available in whole namespace
+** Lesson 13
+*** file name: checkout_module, namespace: checkout-module
+*** component level state
+*** not including component level state in componing render
+** Lesson 14
+*** adding and edit gigs
+
+
+* Clojure
+** ns - define namespace for block of code for provide module component
+** map - collections with key and values: {:name "Stepan" :age 21}
+** run repl in shadow: npx shadow-cljs watch - !!! где прописать??? !!!
+** M-x cider-connect-cljs localhost 3333 shadow - connect to repl AND CHANGE BUF!!!
+** M-x inf-clojure lein-repl - run repl in emacs, right?????
+** (shadow.cljs.devtools.api/nrepl-select :app) - connect to shadowcljs
+** M-x install-package <package-name> - install package
+
+* Clojure functions
+** (distinct [1 2 3 3 3 4 4 5]) => [1 2 3 4 5]
+
+
+
+
+* REPL
+** (ns <namespace>) - change namespace in repl
+** we can call created function in our name space in repl
+
+* Git
+** Lesson 1.1
+*** git init - create git repository
+** Lesson 2.1
+*** git config --global user.name "Stepan Antipov"
+*** git config --list - show config
+*** git config --unset user.name - delete user
+*** git config --global core.editor "" - option for git editor???
+*** git config alias.functionName "!function;function" - alias for several functions
+*** git *config* -h - show options and description about config
+*** git help *config* - show detailed description about config
+*** help -> less - / - search with string or regexp, n - forward, shift-n - back
+** Lesson 2.2
+*** git status - show status of file
+*** git add <filename> - add file to index (2 step)
+*** git commit - add file to repository and create message with id (3 step)
+** Lesson 2.3
+*** right in Linux important for git
+** Lesson 2.4
+*** git show <id> or --pretty=fuller - show commit info
+**** author, commiter
+** Lesson 2.5
+*** git doesn't see empty directories
+*** git show changes in *git status* if file changed
+*** git reset HEAD <filename> - reset changes in index
+*** .gitignore for no need file
+*** which files we should ignore???
+*** git commit -m "comment" - make a comment after commit
+*** do not commit .gitignore file???
+*** after making commit we can see 7 numbers - id of commit. We can return to this
+*** commit in future with id
+** Lesson 2.6
+*** commit - smallest part of git project.
+*** Commit do one thing - atomic, consistent (logical, full)
+*** do not create a large commit. Its difficult to read and redact
+*** Commit early. Commit often
+*** Commit with general letter or functional: what was done
+** Lesson 2.7
+*** for what we need index???
+*** It's need for atomic, when we ready to add one function, but not other
+*** We can even commit particular code in one file and do not commit other
+*** git add -p <filename>
+** Lesson 2.8
+*** git commit -am "Message" - commit changes without indexing
+*** but this file must be trucked
+*** git commit -m "Message" .gitignore - commit particular file
+*** git add -A - index all files
+** Lesson 2.9
+*** We can delete file from index, of delete him from project and git add him
+*** git commit -m Clreanup - commit missing file
+*** git rm -r <ditname> - delete file form project and from index
+*** git rm -r --cached src - delete file from index
+*** --cached - operations with index instead of project file
+*** -f - forced
+*** We can rename file. Just need to add old file to index and new
+*** or git mv old.file new.file
+** Lesson 3.1
+*** branches - isolated stream of development for new functionalites
+*** we can change branhes when we want (if we have a rights
+*** cherry-pick - fix bag in several branches
+** Lesson 3.2
+*** git branch - show branch -v
+*** oru branches - .git/refs/heads/<branche name>
+*** HEAD - actual branch
+*** ...
+
+** Other commands:
+*** git init
+*** git fetch - get all files for repo???
+*** git add .
+*** git commit -m "Comment"
+*** git config --global init.defaultBranch main - main default branch
+*** add files top gitinore - /bin - dir, *.js - files
+*** make gitignore before first commit
+*** git remote - show repositories????
+*** git remote add <reponame> <repolink> - add reponame
+*** git push -u <remote name> <branch name> (our branch) - send changes to the server
+*** git branch <branch name> - create new brench?????
+*** git checkout <branch name> - switch branch
+*** git checkout -b <branch name> - create new branch
+*** git merge <source branch> - merge branches
+*** git pull - fetch changes from server????
+*** need to create token for password (setting for development, gengerate new key)
+*** git merge --no-ff myfeature - merge branches with history
+*** git branch -d <namebranc> - delete branch
+*** git branch - show branches
+*** git push origin (name of repo) <branch name> - залить изменения в отдельную ветку
+*** git add -p <filename> - load part of files to repo
+*** git reset <filename> - delete file form index
+*** pull request - branches, new pull request, choose branche TO,
+*** choose branche FROM,create pull request
+*** git pull origin development - получить изменения ветки с репозитория
+*** git branch -d myfeature - delete branch local
+*** git push origin --delete my_branch - delete brach from repo
+*** CREATE BRANCH, SAVE CHANGES, DELETE BRANCH
+*** СНАЧАЛА СОЗДАЕМ ВЕТКУ, ПОТОМ ЗАЛИВАЕМ ИЗМЕНЕНИЯ
+*** git restore --staged <filename> - remove from index???
+*** git checkout development -> git merge feature- - merge local branches
+*** git merge development  --allow-unrelated-histories - замерджить две несвязанные ветки
+*** git stash - временно спрятать изменения
+*** git config --global credential.helper store - запомнить пароль??
+*** git clone https... - clone repo
+*** git clone https...git -b <branch-name> - клонировать определенную ветку
+*** git ignore
+*** git rm --cached filename.txt -удалить файлы из отслеживаемых
+
+* emacs shortcuts
+** M-a M-e - to start/end of expression
+** C-x o - switch focus between opened buffers
+** C-x u - undotree
+** C-y - paste
+** M-w - copy
+** pick out C-h f - show documentation
+** M-x find-function <function name> - find functinon
+** С-x o - return back, focus on other buffer
+** C-s char - search code
+** C-x C-s - save file
+** C-x b - change buffer
+** C-w - cut text
+** C-x k - kill buffer
+** C-x 5 2 - new frame
+** C-x 5 o - change frame
+** C-a - go to start of line
+** C-e - go to and of line
+** C-u C-l - focus middle of screen
+** C-x t t - open directory panel
+** M-x cider-jack-in - run clojure projhect
+** M-x make-directory dir/to/create - create folder
+** C-x C-f filename - create file
+** C-x h - pick out, select all
+** M-; - comment code
+** C-x k or C-x k - - Kill current buffer
+
+
+* org shortcats
+** C-c C-t - change todo status
+** C-c C-l - create link
+** shift tab - show/hide list
+** shift ->/<- - change todo status
+** C-c C-s - schedule date
+** C-c C-d - schedule deadline
+** C-space or Shift- ->/-< - pick out text
+
+
+* linux shortcuts and command
+** M-tab - change app
+** grep -r "string" ~/path/to/
+** gpg --list-keys - show list keys
+** gpg --edit-key <key> - config key
+** gpg> trust - define trust to keys
+** find ~/path/to -name filename.el - search file linux
+** C-M->/< - change work space
+** Command-Tab - change all app
+** M-Tab - choose app in actual worksapce
+** >/< in files - choose directory
+** C-Shift-w - close terminal
+** tree <ditname> - show dir tree
+** cat <filename> - show file content
+** chmod <key> <filename> - change access rights
+
+* google chrome browser shortcuts
+** C-k - focus on search bar
+** C-Tab - next page
+** C-Shift-Tab - previous page
+** C-t - new page
+** M->/< - previous/next page
+** C-r - reboot page
+** C-w - kill current tab
+** C-Shift-c - open devtools
+
+* my links
+[[https://github.com/stepan-antipov][github]]
+[[https://www.gnupg.org/gph/en/manual.html][gnupg]]
+[[https://www.gnu.org/software/emacs/manual/emacs.html][emacs-manual]]
+[[https://www.freecodecamp.org/news/here-is-a-quick-overview-of-the-similarities-and-differences-between-clojurescript-and-javascript-c5bd51c5c007/][differences js and cljs]]
+
+
+* packages
+** avy - навигация по тексту
+*** С-: char - найти совпадния в коде с введенным символом
+*** C-' char - найти символы после совпадения
+
+
+* other
