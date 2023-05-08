@@ -48,20 +48,20 @@ Can be an integer to determine the exact padding."
 ;; ff995e => #ff8e53
 ;; #c099ff =>  #39e8ff
 
-;; #39e8ff #5cfee3 #ff4b4f #ff8280
+;; #39e8ff #5cfee3 #ffe800
 
    (grey base5)
 
    (dark-red      '("#ff5370" "#ff5370" "red"))
    (red           '("#ff1f1e" "#ff1f1e" "red"))
    (light-red     '("#ff98a4" "#ff98a4" "brightred"))
-   (orange        '("#ff8280" "#ff8280" "brightred"))
-   (green         '("#6fff9c" "#6fff9c" "green"))
+   (orange        '("#ffffff" "#ffffff" "brightred"))
+   (green         '("#ffe800" "#ffe800" "green"))
    (dark-teal     '("#4fd6be" "#4fd6be" "green"))
    (teal          '("#77e0c6" "#77e0c6" "brightgreen"))
    (light-teal    '("#7af8ca" "#7af8ca" "brightgreen"))
-   (yellow        '("#ffc777" "#ffc777" "brightyellow"))
-   (blue          '("#ffe800" "#ffe800" "brightblue"))
+   (yellow        '("#ff9c48" "#ff9c48" "brightyellow"))
+   (blue          '("#6fff9c" "#6fff9c" "brightblue"))
    (dark-blue     '("#4976eb" "#4976eb" "brightblue"))
    (light-blue    '("#50c4fa" "#50c4fa" "blue"))
    (light-magenta '("#baacff" "#baacff" "brightmagenta"))
@@ -71,6 +71,7 @@ Can be an integer to determine the exact padding."
    (pink          '("#f3c1ff" "#f3c1ff" "magenta"))
    (cyan          '("#b4f9f8" "#b4f9f8" "brightcyan"))
    (dark-cyan     '("#86e1fc" "#86e1fc" "cyan"))
+
 
    ;; face categories -- required for all themes
    (highlight      blue)
