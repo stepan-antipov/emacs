@@ -93,6 +93,7 @@
 *** not including component level state in componing render
 ** Lesson 14
 *** adding and edit gigs
+*** js/console - do not need to be required
 
 
 * Clojure
@@ -106,8 +107,47 @@
 
 * Clojure functions
 ** (distinct [1 2 3 3 3 4 4 5]) => [1 2 3 4 5]
+** (doc function) => show docs about functinon
+** (source function) => show source about function
+** (/ (apply + [1 2 3] (count [1 2 3])))
+** apply - выполняет заданные действия со всеми элементами вектора
+** [1. 2. 3.]
+** (Math/sin 9)
+** (.toUpperCase "Hello") - function from Java
+** (float 45) => 45.0
+** (int 45.7) => 45
+** (str 45.7) => "45.7
+** :name - ключевое слово, используется в ассоциированных массивах - хешах (объектах?)
+** (type name) => type
 
+** list (список) - (def a '(1 2 3)) (defn a (list 1 2 3)) - нужны для организации программного кода
+** (range 5) => '(0 1 2 3 4) (range 1.2 8.9 1.4) - так тоже можно
+** (cons 7 '(1 2 3)) => '(7 1 2 3)
+** (conj '(1 2 3) 7) => '(7 1 2 3)
+** (assoc [6 7 8] 3 "Hello"")
+** (assoc {:key1 "old value1" :key2 "value2"}
+**        :key1 "value1" :key3 "value3") => {:key1 "value1" :key2 "value2" :key3 "value3"}
+** (first [1 2 3]) => 1 and (peek [1 2 3]) => 1
+** (rest [1 2 3]) => [2 3] and (next [1 2 3]) => [2 3] and (pop [1 2 3]) => [2 3] if not empty
 
+** vectors - список аргументов для функций, последовательность элементов [] (массив)
+** (def lol (into-array [1 2 3])) => изменяемый список
+** такой массив вызывается с помощью (seq lol) => [1 2 3]
+** (aset lol 0 9) => [9 2 3]
+** можно вытаскивать элементы по индексу:
+** (def alf ["a" "b" "c" "d"]) (alf 2) => c
+** (get alf 1) and (nth alf 1) => b
+** (vec (range 2 6)) => [2 3 4 5]
+** (seq [1 2 3]) => '(1 2 3) последовательность???
+** (replace {3 9} [1 2 3]) => [1 2 9]
+** (into [1 2] [2 3]) => [1 2 2 3]
+
+** (rseq [1 2 3]) => (3 2 1)
+** (assoc [10 9 8 7 6] 3 :dd) => [10 9 8 :dd 6]
+
+** (str "Stepan" "Antipov") => "StepanAntipov"
+** [clojure.string :as str]
+** do??
 
 
 * REPL
@@ -247,6 +287,7 @@
 ** M-; - comment code
 ** C-x k or C-x k - - Kill current buffer
 
+** C-x u - visual undo tree
 
 * org shortcats
 ** C-c C-t - change todo status
