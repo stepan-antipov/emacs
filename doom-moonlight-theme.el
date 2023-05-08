@@ -48,14 +48,14 @@ Can be an integer to determine the exact padding."
 ;; ff995e => #ff8e53
 ;; #c099ff =>  #39e8ff
 
-;; #39e8ff #5cfee3 #ccacff
+;; #39e8ff #5cfee3 #ff4b4f #ff8280
 
    (grey base5)
 
    (dark-red      '("#ff5370" "#ff5370" "red"))
    (red           '("#ff1f1e" "#ff1f1e" "red"))
    (light-red     '("#ff98a4" "#ff98a4" "brightred"))
-   (orange        '("#ff9369" "#ff9369" "brightred"))
+   (orange        '("#ff8280" "#ff8280" "brightred"))
    (green         '("#6fff9c" "#6fff9c" "green"))
    (dark-teal     '("#4fd6be" "#4fd6be" "green"))
    (teal          '("#77e0c6" "#77e0c6" "brightgreen"))
