@@ -48,7 +48,7 @@ Can be an integer to determine the exact padding."
 ;; ff995e => #ff8e53
 ;; #c099ff =>  #39e8ff
 
-;; #39e8ff #5cfee3 #ffe800
+;; #39e8ff #5cfee3 #ffe800 #ff99a8
 
    (grey base5)
 

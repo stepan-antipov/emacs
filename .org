@@ -80,7 +80,7 @@
 *** !reset - ???
 ** Lesson 11
 *** empty? - true or false
-*** (if (empty? @state/orders) [this block] [or this block])
+*** (if (empty? @state/orders) [this block] [or this block]
 ** Lesson 12
 *** (def greet (fn [name] (str "Hi " name)))
 *** (defn greet2 [name lastName] (str "Hi " name))
@@ -147,7 +147,16 @@
 
 ** (str "Stepan" "Antipov") => "StepanAntipov"
 ** [clojure.string :as str]
-** do??
+** do - (do (println "Hello") (println "world"))
+** (map list [1 2 3] [4 5 6]) => [ [1 4 ] [2 5] [3 6]]
+** (defn max-delta [l1 l2]
+**    (reduce (fn [acc [x y]] (max acc (Math/abs (- x y))))
+**        0 (map list l1 l2)))
+** (last (list 1 2 3)) => 3
+** maps - (def scores {"Tom" 67 "Lol" 87 "Gol" 12 "Row" 0})
+** ((juxt :a :b) {:a 1 :b 2 :c 3 :d 4}) ;;=> [1 2]
+** (into (sorted-map) [ [:a 1] [:c 3] [:b 2] ] ) => {:a 1, :b 2, :c 3}
+** [clojure.walk :as walk]
 
 
 * REPL
@@ -286,7 +295,7 @@
 ** C-x h - pick out, select all
 ** M-; - comment code
 ** C-x k or C-x k - - Kill current buffer
-
+*** C-<-/-> - Переместить скобку налево или направо О-о
 ** C-x u - visual undo tree
 
 * org shortcats
