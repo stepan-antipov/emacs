@@ -95,7 +95,6 @@
 *** adding and edit gigs
 *** js/console - do not need to be required
 
-
 * Clojure
 ** ns - define namespace for block of code for provide module component
 ** map - collections with key and values: {:name "Stepan" :age 21}
@@ -104,6 +103,10 @@
 ** M-x inf-clojure lein-repl - run repl in emacs, right?????
 ** (shadow.cljs.devtools.api/nrepl-select :app) - connect to shadowcljs
 ** M-x install-package <package-name> - install package
+**** ВНИМАТЕЛЬНО ЧИТАТЬ ДОКУМЕНТАЦИЮ И ПРОВЕРЯТЬ КОРРЕКТНОСТЬ НАПИСАННОГО КОДА
+** #() - анонимная функция
+** clj->js ?????
+** firebase - крутая штука, позволяющая создавать приложения с базой данных
 
 * Clojure functions
 ** (distinct [1 2 3 3 3 4 4 5]) => [1 2 3 4 5]
@@ -157,6 +160,19 @@
 ** ((juxt :a :b) {:a 1 :b 2 :c 3 :d 4}) ;;=> [1 2]
 ** (into (sorted-map) [ [:a 1] [:c 3] [:b 2] ] ) => {:a 1, :b 2, :c 3}
 ** [clojure.walk :as walk]
+** (db-save!) - ! мутирует что-то
+
+
+* Clojure Dart-Flutter
+**** Позволяет создавать кросплатформенные приложения для IOS, Android, Web,Desk
+**** Позволяет работать с бибилиотеками Java, Obj C
+**** компилируется в js, быстрый
+**** flutter - имеет в себе готовые решения для рендера, отлова событий и анимаций,виджеты
+**** работает с React
+**** Много документации
+**** Много пакетов
+**** Много приложений написано
+**** Солидная строчка в резюме
 
 
 * REPL
@@ -268,8 +284,16 @@
 *** git clone https...git -b <branch-name> - клонировать определенную ветку
 *** git ignore
 *** git rm --cached filename.txt -удалить файлы из отслеживаемых
+*** git config --global --unset user.password - reset password
 
 * emacs shortcuts
+**** написать еще команд и зафигачить в отдельную ветку
+** M-h - выделить абзац
+** M-f/-> M-b/-< - начало и конец слова
+** M-a - начало выражения
+** M-e - конец выражения
+** M-. - переход к функции
+** M-, - обратно
 ** M-a M-e - to start/end of expression
 ** C-x o - switch focus between opened buffers
 ** C-x u - undotree
@@ -309,6 +333,7 @@
 
 
 * linux shortcuts and command
+** M-SPACE - make screenshot??
 ** M-tab - change app
 ** grep -r "string" ~/path/to/
 ** gpg --list-keys - show list keys
